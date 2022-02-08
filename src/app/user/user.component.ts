@@ -11,14 +11,14 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent implements OnInit {
   user = new User(); // verlinkung für die models datei
-  allUsers = [];
+  allUsers : any[] = []; // geändert wegen fehler
 
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     this.firestore
     .collection('users')
-    .valueChanges()
+    .valueChanges({idField: 'costumIdName'})
     .subscribe((changes: any) => {
       console.log('changes Database', changes);
       this.allUsers = changes;
