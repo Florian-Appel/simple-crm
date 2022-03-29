@@ -8,8 +8,7 @@
     <img src="/assets/img/user.png" alt="">
     <div class="user-details">
         <h2>{{user.firstName}} {{user.lastName}}</h2>
-        {{user.email}}
-
+        {{user.email}} <br> {{user.mobileNumber}}
     </div>
 </mat-card>
 
@@ -27,4 +26,29 @@
     <mat-card-content>
         {{user.street}} <br> {{user.zipCode}} {{user.city}}
     </mat-card-content>
+</mat-card>
+
+<mat-card class="mt-32">
+    <mat-card-title>Notes</mat-card-title>
+
+    <form class="example-form notes">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>title</mat-label>
+            <input matInput placeholder="title">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>note</mat-label>
+            <textarea matInput rows="5" placeholder="note"></textarea>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="addNotes()">Add</button>
+
+</mat-card>
+
+<!-- Noch das datum vom tag der erstellung der notiz anziegen -->
+
+<mat-card class="mt-32">
+    <h3>"show notes"</h3>
 </mat-card>

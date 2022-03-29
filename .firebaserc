@@ -6,9 +6,16 @@
           "simple-crm-ada52"
         ]
       }
+    },
+    "crm-system-720b7": {
+      "hosting": {
+        "simple-crm": [
+          "crm-system-720b7"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "simple-crm-ada52"
+    "default": "crm-system-720b7"
   }
 }

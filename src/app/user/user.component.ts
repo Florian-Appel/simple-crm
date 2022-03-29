@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 
@@ -11,18 +11,18 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent implements OnInit {
   user = new User(); // verlinkung für die models datei
-  allUsers : any[] = []; // geändert wegen fehler
+  allUsers: any[] = []; // geändert wegen fehler
 
   constructor(public dialog: MatDialog, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     this.firestore
-    .collection('users')
-    .valueChanges({idField: 'costumIdName'})
-    .subscribe((changes: any) => {
-      console.log('changes Database', changes);
-      this.allUsers = changes;
-    });
+      .collection('users')
+      .valueChanges({ idField: 'costumIdName' })
+      .subscribe((changes: any) => {
+        console.log('changes Database', changes);
+        this.allUsers = changes;
+      });
   }
 
   openDialog() {

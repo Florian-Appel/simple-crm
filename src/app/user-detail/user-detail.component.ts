@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
 import { DialogEditAdressComponent } from '../dialog-edit-adress/dialog-edit-adress.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-user-detail',
@@ -50,4 +51,7 @@ export class UserDetailComponent implements OnInit {
     dialog.componentInstance.userId = this.userId;
   }
 
+  addNotes() {
+
+  }
 }

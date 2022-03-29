@@ -18,8 +18,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'; // firebase (evtl. ohne /compat)
+import { environment } from '../environments/environment'; // firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -30,13 +30,16 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // firebase
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {MatCardModule} from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component'; 
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adress.component';
-import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component'; 
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { DialogAddTasksComponent } from './dialog-add-tasks/dialog-add-tasks.component';
+import {MatSelectModule} from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditAdressComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    DialogAddTasksComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,7 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase), // firebase
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -74,10 +78,12 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
-    AngularFirestoreModule,
+    AngularFirestoreModule, // firebase
     MatProgressBarModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

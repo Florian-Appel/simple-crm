@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    projectId: 'simple-crm-ada52',
-    appId: '1:1052739078939:web:873bb0dc0d121c1cd5a1be',
-    storageBucket: 'simple-crm-ada52.appspot.com',
-    apiKey: 'AIzaSyCj4liInUDNFwFrtyMIcnqixIreXxE5xRo',
-    authDomain: 'simple-crm-ada52.firebaseapp.com',
-    messagingSenderId: '1052739078939',
+    apiKey: "AIzaSyDcbF4ygl90V9WAPxevm1UUXWB6GZw2IsA",
+    authDomain: "crm-system-720b7.firebaseapp.com",
+    projectId: "crm-system-720b7",
+    storageBucket: "crm-system-720b7.appspot.com",
+    messagingSenderId: "868624374553",
+    appId: "1:868624374553:web:edd763086adcd506938388"
   }
 };
 
