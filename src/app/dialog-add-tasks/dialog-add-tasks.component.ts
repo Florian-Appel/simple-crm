@@ -11,8 +11,9 @@ import { Tasks } from 'src/models/tasks.class';
 export class DialogAddTasksComponent implements OnInit {
 
   task = new Tasks(); // ?
-  date1!: Date; 
-  date2!: Date;
+  //createdDate!: Date;
+  //finishDate!: Date;
+  loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogAddTasksComponent>, private firestore: AngularFirestore) { }
 
@@ -20,14 +21,16 @@ export class DialogAddTasksComponent implements OnInit {
   }
 
   saveTask() {
-    this.task.date1 = this.date1.getTime();
-    this.task.date2 = this.date2.getTime();
+    //this.task.createdDate = this.createdDate.getTime();
+    //this.task.finishDate = this.finishDate.getTime();
+    this.loading = true;
     this.firestore
-    .collection('tasks')
-    .add(this.task.toJSON())
-    .then((result: any) => {
-      this.dialogRef.close();
-    });
+      .collection('tasks')
+      .add(this.task.toJSON())
+      .then((result: any) => {
+        console.log(result);
+        this.loading = false;
+        this.dialogRef.close();
+      });
   }
-
 }

@@ -1,25 +1,28 @@
 export class Tasks {
     task: string;
-    name: string;
+    user: string;
     status: string;
-    date1: number;
-    date2: number;
+    createdDate: number;
+    finishDate: number;
+    note: string;
 
     constructor(obj?: any) {
         this.task = obj ? obj.task : '';
-        this.name = obj ? obj.name : '';
+        this.user = obj ? obj.name : '';
         this.status = obj ? obj.status : '';
-        this.date1 = obj ? obj.date1 : '';
-        this.date2 = obj ? obj.date2 : '';
+        this.createdDate = obj ? obj.createdDate : '';
+        this.finishDate = obj ? obj.finishDate : '';
+        this.note = obj ? obj.note : '';
     }
 
     public toJSON() {
         return {
             task: this.task,
-            name: this.name,
+            user: this.user,
             status: this.status,
-            date1: this.date1,
-            date2: this.date2
-        }
+            createdDate: this.createdDate,
+            finishDate: this.finishDate,
+            note: this.note
+        };
     }
 }

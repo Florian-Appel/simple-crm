@@ -1,18 +1,22 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>
+
 <h1>Add task</h1>
-<div>
+<div mat-dialog-content>
     <div>
-        <mat-form-field class="full-width" appearance="outline">
+        <mat-form-field class="full-width" appearance="fill">
             <mat-label>Task</mat-label>
-            <input matInput placeholder="task">
+            <input [disabled]="loading" [(ngModel)]="task.task" matInput placeholder="task">
         </mat-form-field>
     </div>
     <div>
-        <p>namen auswählen</p>
+        <p>user auswählen</p>
     </div>
     <div>
         <mat-form-field appearance="fill" class="full-width">
             <mat-label>Status</mat-label>
-            <mat-select>
+            <mat-select [(ngModel)]="task.status" [disabled]="loading">
                 <mat-option value="Open">Open</mat-option>
                 <mat-option value="In Progress">In Progress</mat-option>
                 <mat-option value="Done">Done</mat-option>
@@ -21,25 +25,30 @@
     </div>
     <div>
         <mat-form-field appearance="fill" class="full-width">
-            <mat-label>erstellt am:</mat-label>
-            <input matInput [matDatepicker]="picker1">
+            <mat-label>Created on</mat-label>
+            <input [disabled]="loading" [(ngModel)]="task.createdDate" matInput [matDatepicker]="picker1">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field appearance="fill" class="full-width">
-            <mat-label>Zu erledigen bis:</mat-label>
-            <input matInput [matDatepicker]="picker2">
+            <mat-label>Finished at</mat-label>
+            <input [disabled]="loading" [(ngModel)]="task.finishDate" matInput [matDatepicker]="picker2">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
         </mat-form-field>
-
+    </div>
+    <div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>note</mat-label>
+            <textarea [(ngModel)]="task.note" [disabled]="loading" matInput rows="3" placeholder="note"></textarea>
+        </mat-form-field>
     </div>
 </div>
 <div mat-dialog-actions>
-    <button mat-button>Cancel</button>
-    <button mat-button (click)="saveTask()" cdkFocusInitial>Save</button>
+    <button [disabled]="loading" mat-button (click)="dialogRef.close();">Cancel</button>
+    <button [disabled]="loading" mat-button (click)="saveTask()" cdkFocusInitial>Save</button>
 </div>
 
 
