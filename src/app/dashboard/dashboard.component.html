@@ -10,13 +10,13 @@
             <th>Date2</th>
         </tr>
 
-        <tr>
-            <!-- <td>{{task.task}}</td>
+        <tr *ngFor="let task of allTasks" [routerLink]="['/task/']">
+            <!-- [routerLink]="['/task/' + tasks.costumIdName]" -->
+            <td>{{task.task}}</td>
             <td>{{task.user}}</td>
             <td>{{task.status}}</td>
             <td>{{task.createdDate}}</td>
             <td>{{task.finishDate}}</td>
-            <td>{{task.note}}</td> -->
         </tr>
 
 

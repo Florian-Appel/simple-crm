@@ -10,6 +10,7 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  
   user = new User(); // verlinkung für die models datei
   allUsers: any[] = []; // geändert wegen fehler
 
@@ -20,7 +21,6 @@ export class UserComponent implements OnInit {
       .collection('users')
       .valueChanges({ idField: 'costumIdName' })
       .subscribe((changes: any) => {
-        console.log('changes Database', changes);
         this.allUsers = changes;
       });
   }

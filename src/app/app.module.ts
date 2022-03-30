@@ -39,7 +39,8 @@ import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adre
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { DialogAddTasksComponent } from './dialog-add-tasks/dialog-add-tasks.component';
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
+import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component'; 
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     UserDetailComponent,
     DialogEditAdressComponent,
     DialogEditUserComponent,
-    DialogAddTasksComponent
+    DialogAddTasksComponent,
+    DashboardDetailComponent
   ],
   imports: [
     BrowserModule,
