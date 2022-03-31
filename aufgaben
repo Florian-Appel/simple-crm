@@ -1,9 +1,13 @@
 
-- Tasks anzeigen & bearbeiten
+- Tasks bearbeiten
+
+- Wenn es bei tasks keine notiz gibt, soll "keine notiz vorhanden" angezeigt werden.
 
 - Tasks filtern
 
 - User: suche einbauen
+
+- Bei Dashboard trennstriche bis rand (wie bei user)
 
 - User auf aktiv und inaktiv setzen können
 

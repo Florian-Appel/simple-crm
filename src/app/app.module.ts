@@ -40,7 +40,10 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
 import {MatRadioModule} from '@angular/material/radio';
 import { DialogAddTasksComponent } from './dialog-add-tasks/dialog-add-tasks.component';
 import {MatSelectModule} from '@angular/material/select';
-import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component'; 
+import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
+import { DialogEditTaskHeadComponent } from './dialog-edit-task-head/dialog-edit-task-head.component';
+import { DialogEditTaskDetailsComponent } from './dialog-edit-task-details/dialog-edit-task-details.component';
+import { DialogEditTaskNotesComponent } from './dialog-edit-task-notes/dialog-edit-task-notes.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.co
     DialogEditAdressComponent,
     DialogEditUserComponent,
     DialogAddTasksComponent,
-    DashboardDetailComponent
+    DashboardDetailComponent,
+    DialogEditTaskHeadComponent,
+    DialogEditTaskDetailsComponent,
+    DialogEditTaskNotesComponent
   ],
   imports: [
     BrowserModule,

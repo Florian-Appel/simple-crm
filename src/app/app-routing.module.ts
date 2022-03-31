@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'user', component: UserComponent},
   {path: 'user/:id', component: UserDetailComponent},
-  {path: 'task', component: DashboardDetailComponent} // /:id entfernt
+  {path: 'task/:id', component: DashboardDetailComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,48 @@
-<p>dashboard-detail works!</p>
+<mat-card class="detail-header">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="userMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    <mat-menu #userMenu="matMenu">
+        <button (click)="editTaskDetails()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <div class="details ">
+        <h2>
+            {{task.task}}
+        </h2>
+        <h2>
+            {{task.user}}
+        </h2>
+    </div>
+</mat-card>
+
+<mat-card class="mt-32">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="addressMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+    <mat-menu #addressMenu="matMenu">
+        <button (click)="editTaskDetails2()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <h3 style="font-weight: bold;">{{task.status}}</h3>
+    <div class="details-date">
+        <!-- noch stylen -->
+        <p>Created:</p>
+        <h3>{{task.createdDate}}</h3>
+    </div>
+    <div class="details-date">
+        <p>Finish:</p>
+        <h3>{{task.finishDate}}</h3>
+    </div>
+</mat-card>
+
+<mat-card class="mt-32">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="addressMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+    <mat-menu #addressMenu="matMenu">
+        <button (click)="editTaskNotes()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <!-- noch stylen -->
+    {{task.note}}
+</mat-card>

@@ -9,7 +9,7 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-edit-adress.component.scss']
 })
 export class DialogEditAdressComponent implements OnInit {
-  user!: User; // Warum das "!" ?
+  user!: User;
   userId!: string;
   loading = false;
 
@@ -21,12 +21,12 @@ export class DialogEditAdressComponent implements OnInit {
   saveUser() {
     this.loading = true;
     this.firestore
-    .collection('users')
-    .doc(this.userId)
-    .update(this.user.toJSON())
-    .then(() => {
-      this.loading = false;
-      this.dialogRef.close()
-    });
+      .collection('users')
+      .doc(this.userId)
+      .update(this.user.toJSON())
+      .then(() => {
+        this.loading = false;
+        this.dialogRef.close()
+      });
   }
 }

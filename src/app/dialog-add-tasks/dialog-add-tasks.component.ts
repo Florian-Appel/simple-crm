@@ -10,7 +10,7 @@ import { Tasks } from 'src/models/tasks.class';
 })
 export class DialogAddTasksComponent implements OnInit {
 
-  task = new Tasks(); // ?
+  task = new Tasks();
   //createdDate!: Date;
   //finishDate!: Date;
   loading = false;
