@@ -28,22 +28,24 @@
     </mat-card-content>
 </mat-card>
 
+
+
 <mat-card class="mt-32">
     <mat-card-title>Add Notes</mat-card-title>
 
-    <form class="example-form notes">
+    <div class="example-form notes">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>title</mat-label>
-            <input matInput placeholder="title">
+            <input [disabled]="loading" [(ngModel)]="notes.title" matInput placeholder="title">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>note</mat-label>
-            <textarea matInput rows="5" placeholder="note"></textarea>
+            <textarea [disabled]="loading" [(ngModel)]="notes.note" matInput rows="5" placeholder="note"></textarea>
         </mat-form-field>
-    </form>
+    </div>
 
-    <button mat-raised-button color="primary" (click)="addNotes()">Add</button>
+    <button [disabled]="loading" mat-raised-button color="primary" (click)="addNotes()">Add</button>
 
 </mat-card>
 
@@ -51,8 +53,10 @@
 
 <mat-card class="mt-32">
     <mat-card-title>Notes</mat-card-title>
-    <mat-card-content>
-        <!--{{...}}-->
-        "show notes"
-    </mat-card-content>
+    <table>
+        <tr *ngFor="let notes of allNotes">
+            <td>{{notes.title}}</td>
+            <td>{{notes.note}}</td>
+        </tr>
+    </table>
 </mat-card>

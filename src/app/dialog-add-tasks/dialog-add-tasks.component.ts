@@ -15,9 +15,16 @@ export class DialogAddTasksComponent implements OnInit {
   //finishDate!: Date;
   loading = false;
 
+  users!: any;
+
   constructor(public dialogRef: MatDialogRef<DialogAddTasksComponent>, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
+    this.firestore.collection('users')
+    .valueChanges({idFiled : "id"})
+    .subscribe( (users : any) =>{
+        this.users = users;
+    } );
   }
 
   saveTask() {

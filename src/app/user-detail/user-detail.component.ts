@@ -1,8 +1,8 @@
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { Notes } from 'src/models/notes.class';
 import { User } from 'src/models/user.class';
 import { DialogEditAdressComponent } from '../dialog-edit-adress/dialog-edit-adress.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
@@ -14,8 +14,12 @@ import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.co
 })
 export class UserDetailComponent implements OnInit {
 
-  userId: any = ''; // "any" hinzugefügt, weil sonst fehler
+  userId: any = '';
   user: User = new User();
+  notes: Notes = new Notes();
+  loading = false;
+  allNotes: any[] = [];
+
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
@@ -24,6 +28,12 @@ export class UserDetailComponent implements OnInit {
       this.userId = paramMap.get('id');
       this.getUser();
     })
+    this.firestore
+      .collection('notes')
+      .valueChanges()
+      .subscribe((changes: any) => {
+        this.allNotes = changes;
+      })
   }
 
   getUser() {
@@ -49,6 +59,12 @@ export class UserDetailComponent implements OnInit {
   }
 
   addNotes() {
-
+    this.loading = true;
+    this.firestore
+      .collection('notes')
+      .add(this.notes.toJSON())
+      .then((result: any) => {
+        this.loading = false;
+      });
   }
 }

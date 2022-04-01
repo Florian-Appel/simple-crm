@@ -1,4 +1,4 @@
-export class Tasks {
+export class Notes {
     title: string;
     note: string;
 
@@ -14,5 +14,3 @@ export class Tasks {
         };
     }
 }
-
-// Noch nicht eingebunden

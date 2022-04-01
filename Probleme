@@ -1,12 +1,8 @@
 
-- tasks edit firebase
+- user in der detail ansicht anzeigen
 
-- Notes edit feld
+- tasks bearbeiten
 
 - Datum richtig anzeigen
 
-- Wie User auswählen?
-
-- notes anzigen lassen (+firebase)
-
-- AddTask feld breiter
+- notes anzigen lassen (nur bei dem user wo die notiz geschrieben wurde!)

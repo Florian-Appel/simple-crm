@@ -12,13 +12,20 @@ export class DialogEditTaskDetailsComponent implements OnInit {
   task!: Tasks;
   loading = false;
   taskId!: string;
+  users!: any;
 
   constructor(public dialogRef: MatDialogRef<DialogEditTaskDetailsComponent>, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
+    this.firestore.collection('users')
+    .valueChanges({idFiled : "id"})
+    .subscribe( (users : any) =>{
+        this.users = users;
+    } );
   }
 
   saveTask() {
+    console.log(this.task.toJSON());
     this.loading = true;
     this.firestore
       .collection('tasks')
@@ -26,7 +33,7 @@ export class DialogEditTaskDetailsComponent implements OnInit {
       .update(this.task.toJSON())
       .then(() => {
         this.loading = false;
-        this.dialogRef.close();
+        this.dialogRef.close()
       });
   }
 }

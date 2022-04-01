@@ -16,6 +16,7 @@ export class DashboardDetailComponent implements OnInit {
 
   taskId: any = '';
   task: Tasks = new Tasks();
+  users!: any;
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
@@ -24,6 +25,11 @@ export class DashboardDetailComponent implements OnInit {
       this.taskId = paramMap.get('id');
       this.getTasks();
     })
+    this.firestore.collection('users')
+      .valueChanges({ idFiled: "id" })
+      .subscribe((users: any) => {
+        this.users = users;
+      });
   }
 
   getTasks() {
