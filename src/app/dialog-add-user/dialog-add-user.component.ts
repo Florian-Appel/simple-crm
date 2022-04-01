@@ -11,7 +11,7 @@ import { User } from 'src/models/user.class';
 export class DialogAddUserComponent implements OnInit {
 
   user = new User();
-  birthDate!: Date; // Why "!" ?
+  birthDate!: Date;
   loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: AngularFirestore) { }

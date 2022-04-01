@@ -8,7 +8,7 @@ export class Tasks {
 
     constructor(obj?: any) {
         this.task = obj ? obj.task : '';
-        this.user = obj ? obj.name : '';
+        this.user = obj ? obj.user : '';
         this.status = obj ? obj.status : '';
         this.createdDate = obj ? obj.createdDate : '';
         this.finishDate = obj ? obj.finishDate : '';

@@ -31,7 +31,7 @@
     <div>
         <mat-form-field appearance="fill" class="full-width">
             <mat-label>Created on</mat-label>
-            <input [disabled]="loading" [(ngModel)]="task.createdDate" matInput [matDatepicker]="picker1">
+            <input [disabled]="loading" [(ngModel)]="createdDate" matInput [matDatepicker]="picker1">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
@@ -39,7 +39,7 @@
     <div>
         <mat-form-field appearance="fill" class="full-width">
             <mat-label>Finished at</mat-label>
-            <input [disabled]="loading" [(ngModel)]="task.finishDate" matInput [matDatepicker]="picker2">
+            <input [disabled]="loading" [(ngModel)]="finishDate" matInput [matDatepicker]="picker2">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
         </mat-form-field>

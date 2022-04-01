@@ -9,8 +9,8 @@ export class Notes {
 
     public toJSON() {
         return {
-            task: this.title,
-            user: this.note,
+            title: this.title,
+            note: this.note
         };
     }
 }

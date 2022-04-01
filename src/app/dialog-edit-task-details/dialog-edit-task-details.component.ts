@@ -25,7 +25,6 @@ export class DialogEditTaskDetailsComponent implements OnInit {
   }
 
   saveTask() {
-    console.log(this.task.toJSON());
     this.loading = true;
     this.firestore
       .collection('tasks')

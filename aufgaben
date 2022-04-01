@@ -1,17 +1,17 @@
 
-- Tasks bearbeiten
-
 - Wenn es bei tasks-details und bei User-details keine notiz gibt, soll "keine notiz vorhanden" angezeigt werden.
-
-- Tasks filtern (nach zb. Datum oder status)
-
-- User: suche einbauen
 
 - Bei Dashboard trennstriche bis rand (wie bei user)
 
-- User inaktiv setzen können (wird dann rot oder schwach grau angezeigt)
+-- Tasks filtern (nach zb. Datum oder status) ---(evtl)---
 
-___
+- User: suche einbauen ---(evtl)---
+
+- User inaktiv setzen können (wird dann rot oder schwach grau angezeigt) ---(evtl)---
+
+
+
+________________________
 
 Überlegung funtion:
 

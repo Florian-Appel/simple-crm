@@ -25,7 +25,6 @@ export class DialogEditTaskHeadComponent implements OnInit {
   }
 
   saveTask() {
-    console.log(this.task.toJSON());
     this.loading = true;
     this.firestore
       .collection('tasks')
@@ -34,7 +33,6 @@ export class DialogEditTaskHeadComponent implements OnInit {
       .then(() => {
         this.loading = false;
         this.dialogRef.close()
-        console.log(this.task.toJSON());
       });
   }
 
