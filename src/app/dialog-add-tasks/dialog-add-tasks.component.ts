@@ -14,7 +14,6 @@ export class DialogAddTasksComponent implements OnInit {
   createdDate!: Date;
   finishDate!: Date;
   loading = false;
-
   users!: any;
 
   constructor(public dialogRef: MatDialogRef<DialogAddTasksComponent>, private firestore: AngularFirestore) { }

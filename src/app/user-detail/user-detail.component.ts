@@ -15,6 +15,7 @@ import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.co
 export class UserDetailComponent implements OnInit {
 
   userId: any = '';
+  noteId: any = ''; // zum testen
   user: User = new User();
   notes: Notes = new Notes();
   loading = false;
@@ -34,6 +35,13 @@ export class UserDetailComponent implements OnInit {
       .subscribe((changes: any) => {
         this.allNotes = changes;
       })
+      // this.firestore
+      // .collection('notes')
+      // .doc(this.noteId)
+      // .valueChanges()
+      // .subscribe((task: any) => {
+      //   this.notes = new Notes(this.notes);
+      // })
   }
 
   getUser() {
@@ -45,6 +53,7 @@ export class UserDetailComponent implements OnInit {
         this.user = new User(user);
       });
   }
+
 
   editMenu() {
     const dialog = this.dialog.open(DialogEditAdressComponent);
