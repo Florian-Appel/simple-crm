@@ -1,21 +1,13 @@
 
-- Wenn es bei tasks-details und bei User-details keine notiz gibt, soll "keine notiz vorhanden" angezeigt werden.
-
-- Bei Dashboard trennstriche bis rand (wie bei user)
-
--- Tasks filtern (nach zb. Datum oder status) ---(evtl)---
-
-- User: suche einbauen ---(evtl)---
-
-- User inaktiv setzen können (wird dann rot oder schwach grau angezeigt) ---(evtl)---
+Noch zu erledigen:
 
 
+- Bei den User notizen hinzufügen können
 
-________________________
+- User & Tasks löschen können
 
-Überlegung funtion:
+- Tasks filtern (nach zb. Datum oder status)
 
-Firma = Online Schulung
+- User: suche einbauen
 
-Neuen User erstellen, erstgespräch zusammengefasst in notizen festhalten, erste ausgabe erteilen, das dann ins tasks erstellen (mit frist).
-Somit hat mann immer über alles einen überblick
+- User inaktiv setzen können (wird dann rot oder schwach grau angezeigt)

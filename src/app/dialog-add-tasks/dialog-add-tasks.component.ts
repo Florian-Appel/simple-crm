@@ -8,6 +8,7 @@ import { Tasks } from 'src/models/tasks.class';
   templateUrl: './dialog-add-tasks.component.html',
   styleUrls: ['./dialog-add-tasks.component.scss']
 })
+
 export class DialogAddTasksComponent implements OnInit {
 
   task = new Tasks();
@@ -16,14 +17,16 @@ export class DialogAddTasksComponent implements OnInit {
   loading = false;
   users!: any;
 
+
   constructor(public dialogRef: MatDialogRef<DialogAddTasksComponent>, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     this.firestore.collection('users')
-    .valueChanges({idFiled : "id"})
-    .subscribe( (users : any) =>{
+      .valueChanges({ idFiled: "id" })
+      .subscribe((users: any) => {
         this.users = users;
-    } );
+      });
+
   }
 
   saveTask() {
@@ -38,4 +41,16 @@ export class DialogAddTasksComponent implements OnInit {
         this.dialogRef.close();
       });
   }
+
+  //   setCalendarMinDateToday() {
+  //     let today = new Date();
+  //     let DD = today.getDate();
+  //     let MM = today.getMonth() + 1;
+  //     let YYYY = today.getFullYear();
+  //     if (DD < 10) DD = "0" + DD;
+  //     if (MM < 10) MM = "0" + MM;
+  //     today = `${YYYY}-${MM}-${DD}`;
+  //     console.log("Today", today);
+  //     document.getElementById("date-field").setAttribute("min", today);
+  // }
 }

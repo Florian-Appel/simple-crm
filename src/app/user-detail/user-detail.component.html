@@ -8,7 +8,8 @@
     <img src="/assets/img/user.png" alt="">
     <div class="user-details">
         <h2>{{user.firstName}} {{user.lastName}}</h2>
-        {{user.email}} <br> {{user.mobileNumber}}
+        {{user.email}} <br> {{user.mobileNumber}} <br>
+        <!-- {{user.birthDate | date}} -->
     </div>
 </mat-card>
 
@@ -30,7 +31,7 @@
 
 
 
-<mat-card class="mt-32">
+<!-- <mat-card class="mt-32">
     <mat-card-title>Add Notes</mat-card-title>
 
     <div class="example-form notes">
@@ -49,13 +50,13 @@
 
 </mat-card>
 
-<!-- Noch das datum vom tag der erstellung der notiz anzeigen -->
+    -- Noch das datum vom tag der erstellung der notiz anzeigen --
 
 <mat-card class="mt-32">
     <mat-card-title>Notes</mat-card-title>
     <table class="notes-table">
         <tr *ngFor="let notes of allNotes">
-            <!-- Noch stylen -->
+                -- Noch stylen --
             <td>
                 <h3>{{notes.title}}</h3>
             </td>
@@ -64,4 +65,4 @@
             </td>
         </tr>
     </table>
-</mat-card>
+</mat-card> -->

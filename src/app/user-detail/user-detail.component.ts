@@ -15,11 +15,10 @@ import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.co
 export class UserDetailComponent implements OnInit {
 
   userId: any = '';
-  noteId: any = ''; // zum testen
   user: User = new User();
-  notes: Notes = new Notes();
+  // notes: Notes = new Notes();
   loading = false;
-  allNotes: any[] = [];
+  // allNotes: any[] = [];
 
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
@@ -29,19 +28,12 @@ export class UserDetailComponent implements OnInit {
       this.userId = paramMap.get('id');
       this.getUser();
     })
-    this.firestore
-      .collection('notes')
-      .valueChanges()
-      .subscribe((changes: any) => {
-        this.allNotes = changes;
-      })
-      // this.firestore
-      // .collection('notes')
-      // .doc(this.noteId)
-      // .valueChanges()
-      // .subscribe((task: any) => {
-      //   this.notes = new Notes(this.notes);
-      // })
+    // this.firestore
+    //   .collection('notes')
+    //   .valueChanges()
+    //   .subscribe((changes: any) => {
+    //     this.allNotes = changes;
+    //   })
   }
 
   getUser() {
@@ -67,13 +59,13 @@ export class UserDetailComponent implements OnInit {
     dialog.componentInstance.userId = this.userId;
   }
 
-  addNotes() {
-    this.loading = true;
-    this.firestore
-      .collection('notes')
-      .add(this.notes.toJSON())
-      .then((result: any) => {
-        this.loading = false;
-      });
-  }
+  // addNotes() {
+  //   this.loading = true;
+  //   this.firestore
+  //     .collection('notes')
+  //     .add(this.notes.toJSON())
+  //     .then((result: any) => {
+  //       this.loading = false;
+  //     });
+  // }
 }

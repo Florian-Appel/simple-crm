@@ -30,15 +30,15 @@
     <div class="details-date">
         <!-- noch stylen -->
         <p>Created:</p>
-        <h3>{{task.createdDate}}</h3>
+        <h3>{{task.createdDate | date }}</h3>
     </div>
     <div class="details-date">
         <p>Finish:</p>
-        <h3>{{task.finishDate}}</h3>
+        <h3>{{task.finishDate | date }}</h3>
     </div>
 </mat-card>
 
-<mat-card class="mt-32">
+<mat-card class="mt-32 min-height">
     <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="notesMenu">
         <mat-icon>more_vert</mat-icon>
       </button>
@@ -46,8 +46,8 @@
     <mat-menu #notesMenu="matMenu">
         <button (click)="editTaskNotes()" mat-menu-item>Edit</button>
     </mat-menu>
-    <div>
-        <!-- noch stylen -->
+    <div class="note-div">
+        <!-- if abfrage (wenn keine notiz da ist, dann "keine notiz vorhanden" anzeigen) -->
         {{task.note}}
     </div>
 </mat-card>

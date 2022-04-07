@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="user-card">
 
     <table class="task-table">
 
@@ -13,7 +13,7 @@
             <td>{{task.task}}</td>
             <td>{{task.user}}</td>
             <td>{{task.status}}</td>
-            <td>{{task.finishDate}}</td>
+            <td>{{task.finishDate | date}}</td>
         </tr>
 
 

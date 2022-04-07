@@ -8,8 +8,8 @@ export class User {
     zipCode: number;
     city: string;
 
-    constructor(obj?: any) { // Warum das obj?, bzw. was ist das?
-        this.firstName = obj ? obj.firstName : ''; // = schnelle if/else abfrage. (?)
+    constructor(obj?: any) {
+        this.firstName = obj ? obj.firstName : '';
         this.lastName = obj ? obj.lastName : '';
         this.email = obj ? obj.email : '';
         this.mobileNumber = obj ? obj.mobileNumber : '';
